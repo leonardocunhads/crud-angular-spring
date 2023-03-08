@@ -9,9 +9,15 @@ $custom-app-secondary: mat-palette($mat-purple, A200, A400, 700);
 $custom-app-warn: mat-palette($mat-red, A700);
 
 $custom-theme: mat-light-theme(
-  $custom-app-primary,
-  $custom-app-secondary,
-  $custom-app-warn
+  (
+    color: (
+      primary: $custom-app-primary,
+      accent: $custom-app-secondary,
+      warn: $custom-app-warn,
+    ),
+    typography: define-typography-config(),
+    density: 0,
+  )
 );
 
 @include angular-material-theme($custom-theme);

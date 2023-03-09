@@ -9,5 +9,6 @@
     "Fechar",
     "Mensagem",
     "Vuejs"
-  ]
+  ],
+  "java.compile.nullAnalysis.mode": "automatic"
 }

@@ -10,6 +10,7 @@ import org.springframework.boot.CommandLineRunner;
 import repository.CourseRepository;
 
 @SpringBootApplication
+
 public class CrudSpringApplication {
 
 	public static void main(String[] args) {

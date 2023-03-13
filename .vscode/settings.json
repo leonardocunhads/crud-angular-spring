@@ -15,5 +15,6 @@
   ],
   "java.compile.nullAnalysis.mode": "automatic",
   "cSpell.language": "en,pt-BR,pt,en-US,en-GB",
-  "java.configuration.updateBuildConfiguration": "automatic"
+  "java.configuration.updateBuildConfiguration": "automatic",
+  "java.debug.settings.onBuildFailureProceed": true
 }

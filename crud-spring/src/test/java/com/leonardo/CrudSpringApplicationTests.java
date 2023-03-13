@@ -1,4 +1,4 @@
-package com.leonardo.crudspring;
+package com.leonardo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

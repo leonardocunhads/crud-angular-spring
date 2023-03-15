@@ -24,7 +24,7 @@ public class Course {
     @Column(length = 200, nullable = false)
     private String name;
 
-    @Column(length = 200, nullable = false)
+    @Column(length = 15, nullable = false)
     private String category;
 
 }

@@ -17,10 +17,6 @@ public class CourseController {
 
     private final CourseRepository courseRepository;
 
-    // public CourseController(CourseRepository courseRepository) {
-    // this.courseRepository = courseRepository;
-    // }
-
     @GetMapping
     public List<Course> list() {
         return courseRepository.findAll();

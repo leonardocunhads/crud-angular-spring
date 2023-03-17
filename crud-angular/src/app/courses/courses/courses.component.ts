@@ -4,7 +4,7 @@ import { CourseService } from '../services/course.service';
 import { Observable, catchError, of } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
 import { ErrorDialogComponent } from 'src/app/shared/components/error-dialog/error-dialog.component';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-courses',
@@ -18,7 +18,8 @@ export class CoursesComponent {
   constructor(
     private courseService: CourseService,
     public dialog: MatDialog,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute, // usado para acessar a rota que já está sendo utilizada
     ) {
     this.courses$ = this.courseService.listAll().pipe(
       catchError((error) => {
@@ -35,7 +36,9 @@ export class CoursesComponent {
   }
 
   onAdd(){
-    this.router.navigate(['courses/new']);
-    console.log('message: Add course');
+    // new pode ser utilizado por conta do ActivatedRoute
+    // sem o ActivatedRoute,  rota seria 'courses/new'
+    this.router.navigate(['new'],{relativeTo: this.route});
+    console.log(this.router.url);
   }
 }

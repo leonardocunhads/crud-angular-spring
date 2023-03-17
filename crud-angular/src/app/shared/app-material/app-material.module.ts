@@ -5,6 +5,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
 
 // modulo para organizar todos os imports
 
@@ -16,6 +17,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatProgressSpinnerModule,
     MatDialogModule,
     MatButtonModule,
+    MatIconModule,
   ],
 })
 export class AppMaterialModule {}

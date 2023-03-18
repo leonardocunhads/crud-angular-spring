@@ -4,13 +4,10 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-course-form',
   templateUrl: './course-form.component.html',
-  styleUrls: ['./course-form.component.scss']
+  styleUrls: ['./course-form.component.scss'],
 })
 export class CourseFormComponent {
-
-
   form: FormGroup;
-
 
   constructor(private formBuilder: FormBuilder) {
     this.form = this.formBuilder.group({
@@ -19,5 +16,11 @@ export class CourseFormComponent {
     });
   }
 
+  onSubmit() {
+    console.log(this.form.value);
+  }
 
+  onCancel() {
+    console.log('Redirecionar para página Home');
+  }
 }

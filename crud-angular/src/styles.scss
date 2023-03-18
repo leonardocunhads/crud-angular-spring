@@ -5,8 +5,9 @@
 @include mat-core();
 
 $custom-app-primary: mat-palette($mat-purple, 900);
-$custom-app-secondary: mat-palette($mat-purple, A200, A400, 700);
+$custom-app-secondary: mat-palette($mat-light-green, A400);
 $custom-app-warn: mat-palette($mat-red, A700);
+// $custom-app-background: mat-palette($mat-grey, 800);
 
 $custom-theme: mat-light-theme(
   (
@@ -14,6 +15,7 @@ $custom-theme: mat-light-theme(
       primary: $custom-app-primary,
       accent: $custom-app-secondary,
       warn: $custom-app-warn,
+      // bgc: $custom-app-background,
     ),
     typography: define-typography-config(),
     density: 0,
@@ -29,4 +31,5 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #424242;
 }

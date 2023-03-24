@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { CourseService } from '../services/course.service';
 
 @Component({
   selector: 'app-course-form',
@@ -9,7 +11,12 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class CourseFormComponent {
   form: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private route: ActivatedRoute,
+    private courseService: CourseService
+  ) {
     this.form = this.formBuilder.group({
       name: [null],
       category: [null],
@@ -17,10 +24,13 @@ export class CourseFormComponent {
   }
 
   onSubmit() {
-    console.log(this.form.value);
+    this.courseService.save(this.form.value).subscribe(
+      (result) => console.log(result),
+      (error) => console.log(error)
+    );
   }
 
   onCancel() {
-    console.log('Redirecionar para página Home');
+    this.router.navigate([''], { relativeTo: this.route });
   }
 }
